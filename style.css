@@ -18,17 +18,45 @@ header{
     padding: 20px 0;
 }
 
-.escolha01 .item img{
-    width: 50%;
-    filter: drop-shadow(0 0px 20px #0009);
-}
 
-.escolha01{
+
+.escolhas{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
 
+
+.opcao{
+    cursor: pointer;
+    border: 2px solid transparent;
+    padding: 10px;
+    transition: .3s;
+}
+
+.opcao img{
+    width: 50px;
+    position: relative;
+    z-index: 1;
+}
+
+.opcao.selecionado{
+    border-color: #353432;
+    transform: scale(1.05);
+}
+.opcao{
+    position: relative;
+}
+
+
+.opcao.selecionado::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.6);
+    z-index: 2;
+    pointer-events: none;
+}
 .AbaOrcamento{
     width: 400px;
     background-color: #353432;
