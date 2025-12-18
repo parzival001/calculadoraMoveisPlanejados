@@ -1,0 +1,72 @@
+.container{
+    width: 900px;
+    max-width: 90vw;
+    margin: auto;
+    text-align: center;
+    padding-top: 10px;
+    transition: transform .5s;
+}
+
+svg{
+    width: 30px;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.escolha01 .item img{
+    width: 50%;
+    filter: drop-shadow(0 0px 20px #0009);
+}
+
+.escolha01{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.AbaOrcamento{
+    width: 400px;
+    background-color: #353432;
+    color: aliceblue;
+    position: fixed;
+    inset: 0 -400px 0 auto ;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+    transition: .5s;
+}
+body.mostrarOrcamento .AbaOrcamento{
+    inset: 0 0 0 auto;
+}
+
+body.mostrarOrcamento .container{
+    transform: translateX(-250px);
+
+}
+.AbaOrcamento h1{
+    padding: 20px;
+    margin: 0;
+    font-weight: 300;
+
+}
+
+.AbaOrcamento .btn{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.AbaOrcamento .btn button{
+    background-color: yellow;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.AbaOrcamento .btn .fechar{
+    background-color: aliceblue;
+}
