@@ -98,3 +98,27 @@ body.mostrarOrcamento .container{
 .AbaOrcamento .btn .fechar{
     background-color: aliceblue;
 }
+
+.ambiente01{
+    display: none;
+}
+
+body.mostrarAmbiente .ambiente01{
+    display: grid;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.ambiente02{
+    display: none;
+}
+
+body.mostrarAmbiente02 .ambiente02{
+    display: grid;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+}

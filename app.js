@@ -35,5 +35,38 @@ opcoes.forEach(opcao => {
 });
 
 
+//Ambiente
 
+const ambiente = document.querySelector('.ambiente01');
+
+
+opcoes.forEach(opcao => {
+    opcao.addEventListener('click', () => {
+        opcoes.forEach(o => o.classList.remove('selecionado'));
+        opcao.classList.add('selecionado');
+
+        if (opcao.dataset.value === 'residencial') {
+            body.classList.add('mostrarAmbiente');
+        } else {
+            body.classList.remove('mostrarAmbiente');
+        }
+    });
+});
  
+
+
+const ambienteCom = document.querySelector('.ambiente02');
+
+
+opcoes.forEach(opcao => {
+    opcao.addEventListener('click', () => {
+        opcoes.forEach(o => o.classList.remove('selecionado'));
+        opcao.classList.add('selecionado');
+
+        if (opcao.dataset.value === 'comercial') {
+            body.classList.add('mostrarAmbiente02');
+        } else {
+            body.classList.remove('mostrarAmbiente02');
+        }
+    });
+});
