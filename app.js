@@ -57,7 +57,6 @@ opcoes.forEach(opcao => {
 
 const ambienteCom = document.querySelector('.ambiente02');
 
-
 opcoes.forEach(opcao => {
     opcao.addEventListener('click', () => {
         opcoes.forEach(o => o.classList.remove('selecionado'));
@@ -67,6 +66,33 @@ opcoes.forEach(opcao => {
             body.classList.add('mostrarAmbiente02');
         } else {
             body.classList.remove('mostrarAmbiente02');
+        }
+    });
+});
+
+
+
+const comodos = document.querySelectorAll('.comodos');
+
+comodos.forEach(comodo => {
+    const btnDiminuir = comodo.querySelector('.diminuir');
+    const btnAumentar = comodo.querySelector('.aumentar');
+    const valorSpan = comodo.querySelector('.qtd span:nth-child(2)');
+
+    let quantidade = 1;
+
+    btnAumentar.addEventListener('click', (e) => {
+        e.stopPropagation(); // evita conflito com clique no comodo
+        quantidade++;
+        valorSpan.textContent = quantidade;
+    });
+
+    btnDiminuir.addEventListener('click', (e) => {
+        e.stopPropagation();
+
+        if (quantidade > 1) {
+            quantidade--;
+            valorSpan.textContent = quantidade;
         }
     });
 });
