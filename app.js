@@ -96,3 +96,30 @@ comodos.forEach(comodo => {
         }
     });
 });
+
+
+
+// MATERIAL/ESTILO
+
+let materialSelecionado = "";
+let estiloSelecionado = "";
+
+// MATERIAL
+document.querySelectorAll(".material").forEach(item => {
+    item.addEventListener("click", () => {
+        document.querySelectorAll(".material").forEach(m => m.classList.remove("ativo"));
+        item.classList.add("ativo");
+        materialSelecionado = item.dataset.material;
+        console.log("Material:", materialSelecionado);
+    });
+});
+
+// ESTILO
+document.querySelectorAll(".estilo").forEach(item => {
+    item.addEventListener("click", () => {
+        document.querySelectorAll(".estilo").forEach(e => e.classList.remove("ativo"));
+        item.classList.add("ativo");
+        estiloSelecionado = item.dataset.estilo;
+        console.log("Estilo:", estiloSelecionado);
+    });
+});
