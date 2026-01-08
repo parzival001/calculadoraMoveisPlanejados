@@ -37,7 +37,7 @@ opcoes.forEach(opcao => {
 
 //Ambiente
 
-const ambiente = document.querySelector('.ambiente01');
+//const ambiente = document.querySelector('.ambiente01');
 
 
 opcoes.forEach(opcao => {
@@ -55,7 +55,7 @@ opcoes.forEach(opcao => {
  
 
 
-const ambienteCom = document.querySelector('.ambiente02');
+//const ambienteCom = document.querySelector('.ambiente02');
 
 opcoes.forEach(opcao => {
     opcao.addEventListener('click', () => {
@@ -121,5 +121,65 @@ document.querySelectorAll(".estilo").forEach(item => {
         item.classList.add("ativo");
         estiloSelecionado = item.dataset.estilo;
         console.log("Estilo:", estiloSelecionado);
+    });
+});
+
+
+
+opcoes.forEach(opcao => {
+    opcao.addEventListener('click', () => {
+        opcoes.forEach(o => o.classList.remove('selecionado'));
+        opcao.classList.add('selecionado');
+
+        if (opcao.dataset.value === 'residencial') {
+            body.classList.add('mostrarAmbiente');
+            body.classList.add('mostrarMaterialEstilo'); // 👈 MOSTRA material/estilo
+            body.classList.remove('mostrarAmbiente02');
+        } else {
+            body.classList.remove('mostrarAmbiente');
+            body.classList.remove('mostrarMaterialEstilo'); // 👈 ESCONDE material/estilo
+            body.classList.add('mostrarAmbiente02');
+        }
+    });
+});
+
+
+
+
+comodos.forEach(comodo => {
+    const btnDiminuir = comodo.querySelector('.diminuir');
+    const btnAumentar = comodo.querySelector('.aumentar');
+    const valorSpan = comodo.querySelector('.qtd span:nth-child(2)');
+    const tamanhosContainer = comodo.querySelector('.tamanhos');
+    const template = comodo.querySelector('.tamanho.template');
+
+    let quantidade = 0;
+
+    function atualizarTamanhos() {
+        tamanhosContainer.innerHTML = '';
+
+        for (let i = 0; i < quantidade; i++) {
+            const clone = template.cloneNode(true);
+            clone.classList.remove('template');
+            clone.style.display = 'block';
+
+            tamanhosContainer.appendChild(clone);
+        }
+    }
+
+    btnAumentar.addEventListener('click', e => {
+        e.stopPropagation();
+        quantidade++;
+        valorSpan.textContent = quantidade;
+        atualizarTamanhos();
+    });
+
+    btnDiminuir.addEventListener('click', e => {
+        e.stopPropagation();
+        if (quantidade > 0) {
+            quantidade--;
+            valorSpan.textContent = quantidade;
+            atualizarTamanhos();
+        }
     });
 });

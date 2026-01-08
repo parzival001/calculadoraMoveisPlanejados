@@ -165,6 +165,9 @@ body.mostrarAmbiente02 .ambiente02{
     align-items: center; /* centraliza tudo horizontalmente */
     margin: 30px 0;
 }
+.ambiente-material{
+    margin-top: 200px;
+}
 
 .opcoes-material,
 .opcoes-estilo {
@@ -192,4 +195,24 @@ body.mostrarAmbiente02 .ambiente02{
 .estilo.ativo {
     border-color: #6a0dad;
     background: #f3e8ff;
+}
+
+.material-estilo {
+    display: none;
+}
+
+/* Só aparece quando residencial estiver ativo */
+body.mostrarMaterialEstilo .material-estilo {
+    display: block;
+}
+
+.tamanho.template {
+    display: none;
+}
+
+.tamanhos {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
