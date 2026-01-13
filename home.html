@@ -4,78 +4,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Móveis Planejados</title>
 </head>
 
 <body>
     <div class="container">
-        <form action="">
-            <div class="titulo">
-                <h1>Calculadora Móveis Planejados</h1>
-                <h3>Pré-orçamento</h3>
-            </div>
-            <p>Ambiente</p>
-            <input type="text" name="ambiente" id="">
-            <p>Largura(m)</p>
-            <input type="number" name="" id="">
-            <p>Altura(m)</p>
-            <input type="number" name="" id="">
-            <p>Profundidade(m)</p>
-            <input type="number" name="" id="">
-            <p>Material</p>
-            <input type="text" name="" id="">
-            <p>Quantidade Portas</p>
-            <input type="" name="" id="">
-            <p>Estilo da Porta</p>
-            <input type="text" name="" id="">
-            <p>Modulos(Qtd)</p>
-            <input type="number" name="" id="">
-            <p>Prateleiras</p>
-            <input type="number" name="" id="">
-            <p>Gavetas</p>
-            <input type="number" name="" id="">
-            <p>Puxadores</p>
-            <input type="radio" name="" id="">
-            <p>Instalação</p>
-            <input type="radio" name="" id="">
-            <p>Desconto</p>
-            <input type="text" name="" id="">
-            <p>Prazo</p>
-            <input type="text" name="" id="">
-            <button>Calcular</button>
-            <button>Copiar Resumo</button>
-            <button>Exportar PDF</button>
-        </form>
-    </div>
-    <div class="total">
-        <div class="tituloTotal">
-            <h1>Resultado Estimativa</h1>
-        </div>
-        <div class="descricaotoal">
-            <h5 class="descricao">Metro Linear</h5>
-            <h5 class="descricao">Preço Base</h5>
-            <h5 class="descricao">Acessórios</h5>
-            <h5 class="descricao">Instalação</h5>
-            <h5 class="descricao">Imposto</h5>
-            <h5 class="descricao">Total sem Desconto</h5>
-        </div>
-        <div class="valoresTotal">0.00m</div>
-        <div class="valoresTotal">R$0.00</div>
-        <div class="valoresTotal">R$0.00</div>
-        <div class="valoresTotal">R$0.00</div>
-        <div class="valoresTotal">R$0.00</div>
-        <div class="valoresTotal">R$0.00</div>
-    </div>
-    <div class="valorEstimado">
-        <h2>Total Estimado</h2>
-        <h2>R$0,00</h2>
-        <P>Preço por metro linear: R$0,00</P>
-        <p>Simulação de parcelamento</p>
-        <button>Enviar pelo WhatsApp</button>
-        <button>Gerar Lead (copiar)</button>
-        <p>Obs: Valores Estimados, valor exato após a visita técnica</p>
-    </div>
+        <div class="areaForm">
+            <form action="#">
+                <div class="form-header">
+                    <div class="titulo">
+                        <h1>Calculadora Móveis Planejados</h1>
+                        <h3>Pré-orçamento</h3>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="ambiente">Ambiente</label>
+                        <input type="text" name="ambiente" id="ambiente">
+                    </div>
+                    <div class="input-box">
+                        <label for="largura">Largura</label>
+                        <input type="number" name="" id="largura">
+                    </div>
+                    <div class="input-box">
+                        <label for="altura">Altura</label>
+                        <input type="number" name="" id="altura">
+                    </div>
+                    <div class="input-box">
+                        <label for="profundidade">Profundidade</label>
+                        <input type="number" name="" id="profundidade">
 
+                    </div>
+                    <div class="input-box">
+                        <label for="material">Material</label>
+                        <input type="text" name="" id="material">
+                    </div>
+                    <div class="input-box">
+                        <label for="qtdPortas">Quantidade Portas</label>
+                        <input type="" name="" id="qtdPortas">
+                    </div>
+                    <div class="input-box">
+                        <label for="estiloPortas">Estilo Portas</label>
+                        <input type="text" name="" id="estiloPortas">
+                    </div>
+                    <div class="input-box">
+                        <label for="modulos">Modulos(qtd)</label>
+                        <input type="number" name="" id="modulos">
+                    </div>
+                    <div class="input-box">
+                        <label for="prateleiras">Prateleiras</label>
+                        <input type="number" name="" id="prateleiras">
+                    </div>
+                    <div class="input-box">
+                        <label for="gavetas">Gavetas</label>
+                        <input type="number" name="" id="gavetas">
+                    </div>
+                    <div class="input-box">
+                        <label for="puxadores">Puxadores</label>
+                        <input type="radio" name="" id="puxadores">
+                    </div>
+                    <div class="input-box">
+                        <label for="instalacao">Instalação</label>
+                        <input type="radio" name="" id="instalacao">
+                    </div>
+                    <div class="input-box">
+                        <label for="desconto">Desconto</label>
+                        <input type="text" name="" id="desconto">
+                    </div>
+                    <div class="input-box">
+                        <label for="prazo">Prazo</label>
+                        <input type="text" name="" id="prazo">
+                    </div>
+                </div>
+                <div class="botoes">
+                    <button>Calcular</button>
+                    <button>Copiar Resumo</button>
+                    <button>Exportar PDF</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="total">
+            <div class="tituloTotal">
+                <h1>Resultado Estimativa</h1>
+            </div>
+            <div class="descricaotoal">
+                <h5 class="descricao">Metro Linear</h5>
+                <h5 class="descricao">Preço Base</h5>
+                <h5 class="descricao">Acessórios</h5>
+                <h5 class="descricao">Instalação</h5>
+                <h5 class="descricao">Imposto</h5>
+                <h5 class="descricao">Total sem Desconto</h5>
+            </div>
+            <div class="valoresTotal">0.00m</div>
+            <div class="valoresTotal">R$0.00</div>
+            <div class="valoresTotal">R$0.00</div>
+            <div class="valoresTotal">R$0.00</div>
+            <div class="valoresTotal">R$0.00</div>
+            <div class="valoresTotal">R$0.00</div>
+
+            <div class="valorEstimado">
+                <h2>Total Estimado</h2>
+                <h2>R$0,00</h2>
+                <P>Preço por metro linear: R$0,00</P>
+                <p>Simulação de parcelamento</p>
+                <button>Enviar pelo WhatsApp</button>
+                <button>Gerar Lead (copiar)</button>
+                <p>Obs: Valores Estimados, valor exato após a visita técnica</p>
+            </div>
+        </div>
+
+    </div>
 </body>
 
 </html>
