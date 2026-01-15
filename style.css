@@ -8,6 +8,8 @@
     width: 90%;
     border-radius: 20px;
 }
+
+
 .areaForm{
     width: 80%;
 }
@@ -38,6 +40,7 @@ form{
 body{
     display: flex;
     justify-content: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 #instalacao, #puxadores{
@@ -67,6 +70,22 @@ button{
 }
 
 
+.total-group{
+    background-color: blueviolet;
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.total-box{
+    height: 40px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    margin-left: 1px;
+    margin-right: 10px;
+
+}
 
 
 
