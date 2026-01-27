@@ -37,26 +37,35 @@ const orca06 = document.querySelector("#precoPorMetro")
 
 
 frm.addEventListener("submit", (e) => {
-    const largura = frm.largura.value
-    const altura = frm.altura.value
-    const profundidade = frm.profundidade.value
-    const qtdPortas = frm.qtdPortas.value
-    const modulus = frm.modulos.value
-    const prazo = frm.prazo.value
-    const prateleiras = frm.prateleiras.value
-    const gavetas = frm.gavetas.value
+    const largura = Number(frm.largura.value)
+    const altura = Number(frm.altura.value)
+    const profundidade = Number(frm.profundidade.value)
+    const qtdPortas = Number(frm.qtdPortas.value)
+    const modulus = Number(frm.modulos.value)
+    const prazo = Number(frm.prazo.value)
+    const prateleiras = Number(frm.prateleiras.value)
+    const gavetas = Number(frm.gavetas.value)
 
     //SAÍDA DEMONSTRATIVOS
-    resp01.innerText = `Largura Total: ${largura}m`
-    resp02.innerText = `Altura Total: ${altura}m`
-    resp03.innerText = `Profundidade Total: ${profundidade}m`
-    resp04.innerText = `Portas (qtd): ${qtdPortas}`
-    resp05.innerText = `Modulos (qtd): ${modulus}`
-    resp06.innerText = `Prateleiras (qtd): ${prateleiras}`
-    resp07.innerText = `Gavetas (qtd): ${gavetas}`
-    resp08.innerText = `Prazo: ${prazo} dias`
+    // resp01.innerText = `Largura Total: ${largura}m`
+    // resp02.innerText = `Altura Total: ${altura}m`
+    // resp03.innerText = `Profundidade Total: ${profundidade}m`
+    // resp04.innerText = `Portas (qtd): ${qtdPortas}`
+    // resp05.innerText = `Modulos (qtd): ${modulus}`
+    // resp06.innerText = `Prateleiras (qtd): ${prateleiras}`
+    // resp07.innerText = `Gavetas (qtd): ${gavetas}`
+    // resp08.innerText = `Prazo: ${prazo} dias`
 
+    const ml = largura + altura + profundidade
+    const qtdAcessorios = gavetas + qtdPortas
+    const precoMl = 10
+    const precoAcessorios = 2
 
+    //SAÍDAS ORÇAMENTO
+    orca01.innerText = `${ml}ml`
+    orca02.innerText = `${qtdAcessorios}un`
+    orca04.innerText = `R$${(ml * precoMl) + (precoAcessorios * qtdAcessorios)}`
+    orca06.innerText =`Preço por metro linear: R$${precoMl}`
 
     e.preventDefault()
 })
