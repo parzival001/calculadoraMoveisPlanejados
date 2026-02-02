@@ -11,6 +11,7 @@ const prazo = document.querySelector("#prazo")
 const prat = document.querySelector("#prateleiras")
 const gav = document.querySelector("#gavetas")
 
+
 //IMPORTANDO AS SAÍDAS DO DEMONSTRATVOS
 
 const resp01 = document.querySelector("#outDLargura")
@@ -37,35 +38,76 @@ const orca06 = document.querySelector("#precoPorMetro")
 
 
 frm.addEventListener("submit", (e) => {
+    e.preventDefault()
     const largura = Number(frm.largura.value)
     const altura = Number(frm.altura.value)
     const profundidade = Number(frm.profundidade.value)
     const qtdPortas = Number(frm.qtdPortas.value)
-    const modulus = Number(frm.modulos.value)
+    const modulos = Number(frm.modulos.value)
     const prazo = Number(frm.prazo.value)
     const prateleiras = Number(frm.prateleiras.value)
     const gavetas = Number(frm.gavetas.value)
-
-    //SAÍDA DEMONSTRATIVOS
-    // resp01.innerText = `Largura Total: ${largura}m`
-    // resp02.innerText = `Altura Total: ${altura}m`
-    // resp03.innerText = `Profundidade Total: ${profundidade}m`
-    // resp04.innerText = `Portas (qtd): ${qtdPortas}`
-    // resp05.innerText = `Modulos (qtd): ${modulus}`
-    // resp06.innerText = `Prateleiras (qtd): ${prateleiras}`
-    // resp07.innerText = `Gavetas (qtd): ${gavetas}`
-    // resp08.innerText = `Prazo: ${prazo} dias`
-
+    const material = frm.material.value
+    const estilo = frm.estilo.value
     const ml = largura + altura + profundidade
     const qtdAcessorios = gavetas + qtdPortas
     const precoMl = 10
-    const precoAcessorios = 2
+    const puxador = frm.puxadores.checked
+    const instalacao = frm.instalacao.checked
+
+   
+
+    let qtdPuxador 
+    if (puxador){
+    qtdPuxador = 10 * qtdAcessorios 
+    }else{
+        qtdPuxador = 0
+    }
+
+    let valorInstalacao
+    if (instalacao){
+        valorInstalacao = 600
+    }else {
+        valorInstalacao = 0
+    }
+
+    console.log(qtdPuxador)
+    //Estilo
+    let valorEstilo
+    switch(estilo){
+        case "rustico":
+        valorEstilo = 50
+        break
+        case "minimalista":
+        valorEstilo = 60
+        break
+        case "tradicional": 
+        valorEstilo = 80
+        break
+    }
+    //Material
+    let valorMaterial
+    switch(material){
+        case "MDF":
+        valorMaterial = 100
+        break
+        case "Carvalho":
+        valorMaterial = 110
+        break
+        case "MDP": 
+        valorMaterial = 120
+        break
+    }
+
 
     //SAÍDAS ORÇAMENTO
     orca01.innerText = `${ml}ml`
-    orca02.innerText = `${qtdAcessorios}un`
-    orca04.innerText = `R$${(ml * precoMl) + (precoAcessorios * qtdAcessorios)}`
+    orca02.innerText = `R$${qtdAcessorios * 10}`
+    orca04.innerText = `R$${(ml * precoMl) + (modulos * 200) + (valorEstilo) + (valorMaterial) + (qtdPuxador) + (valorInstalacao)}`
     orca06.innerText =`Preço por metro linear: R$${precoMl}`
 
-    e.preventDefault()
+    
+
+
+
 })
